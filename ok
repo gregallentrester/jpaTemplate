@@ -1,0 +1,7 @@
+#!/bin/bash -p
+
+caption " ch2, lh2, kh2 "
+
+kh2
+  
+mvn spring-boot:run

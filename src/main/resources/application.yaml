@@ -1,0 +1,41 @@
+main:
+  banner-mode: off
+
+output:
+  ansi:
+    enabled: NEVER
+
+spring:
+  datasource:
+    url: "jdbc:h2:file:./data/demo"
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+      poolName: HikariPoolZZZ
+
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+
+logging:
+  level:
+    org.springframework: INFO
+    net.greg.jpa: INFO
+    com.zaxxer: DEBUG
+    root: ERROR
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+
+### Legend
+### logging.level.net.greg.jpa: INFO
+### logging.level.com.zaxxer: DEBUG
+### logging.level.root: ERROR
+### logging.pattern.console: =%-5level %logger{36} - %msg%n
